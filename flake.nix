@@ -9,6 +9,7 @@
     packages.${system}.default = pkgs.wireguard-tools.overrideAttrs (old: {
       src = self;
       version = "git-${self.shortRev or "dirty"}";
+      sourceRoot = "source/src";
     });
 
     devShells.${system}.default = pkgs.mkShell {
